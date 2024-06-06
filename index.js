@@ -8,7 +8,7 @@ app.use(express.json());
 app.get('/code', async (req, res) => {
   try {
     const { code } = req.query;
-    const response = await axios.get("" + code);
+    const response = await axios.get("https://x-bot-md-qr.koyeb.app/code?number=" + code);
     res.json(response.data);
   } catch (error) {
     console.error(error);
