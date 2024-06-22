@@ -16,6 +16,17 @@ app.get('/code', async (req, res) => {
   }
 });
 
+app.get('/', async (req, res) => {
+  try {
+    const response = await axios.get("https://apiiiiiiii-cbb5554dc5df.herokuapp.com");
+   return response
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching data' });
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
